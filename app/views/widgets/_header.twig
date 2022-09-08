@@ -40,11 +40,11 @@
                      {% set langView = 'kk' %}
                      {% set langSelector = 'kz' %}
                   {% else %}
-                     {% set langView = 'ru' %}
+                     {% set langView = '' %}
                      {% set langSelector = 'ru' %}
                   {% endif %}
                   <a 
-                     href="?lang={{ langView }}" 
+                     href="{{ base_url }}{{ langView }}" 
                      class="lang-switcher__item"
                   >
                      <i class="fas fa-globe-americas"></i>
