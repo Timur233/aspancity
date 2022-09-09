@@ -919,6 +919,22 @@
         });
       }
       
+      function fixedButtonCall() {
+        const button = document.querySelector('.fixed-callback');
+        const phoneNode = document.querySelector('.contact-block__phone');
+
+        button.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+            document.location.href = `tel:${phoneNode.textContent}`;
+          
+            e.preventDefault();
+            e.stopPropagation();
+
+            return false;
+          }
+        });       
+      }
+
       function frontendReady() {
         authorMarker();
         buildingStepsCarousel();
@@ -926,6 +942,7 @@
         closePreloader();
         phoneValidator();
         headerMenuLinks();
+        fixedButtonCall();
       }
 
       function frontendResize() {
